@@ -11,7 +11,6 @@ function LoginPage() {
 			<LoginPageContainer>
 				<form>
 					<Input
-						id={5}
 						placeholder={"Digite o seu nome: "}
 						value={name}
 						onChange={setName}
