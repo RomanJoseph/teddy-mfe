@@ -5,8 +5,20 @@ import teddyLogo from "../../assets/images/teddy-logo.png";
 function Header() {
 	return (
 		<HeaderContainer>
-			<img src={menuIcon} className="logo react" alt="React logo" />
-			<img src={teddyLogo} className="logo react" alt="React logo" />
+			<div className="header-left">
+				<img src={menuIcon} className="menu-icon" alt="Manu" />
+				<img src={teddyLogo} className="teddy-logo" alt="TeddyLogo" />
+			</div>
+			<div className="header-center">
+				<span>Clientes</span>
+				<span>Clientes selecionados</span>
+				<span>Sair</span>
+			</div>
+			<div className="header-right">
+				<span>
+					Olá, <b>Usuário!</b>
+				</span>
+			</div>
 		</HeaderContainer>
 	);
 }
