@@ -1,21 +1,45 @@
 import React, { Suspense } from "react";
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+	useLocation,
+	useNavigate,
+} from "react-router-dom";
 import "./App.css";
-
-const RemoteCounter = React.lazy(() => import("customers/CustomersPage"));
+/* 
+const CustomersPage = React.lazy(() => import("customers/CustomersPage"));
+const SelectedCustomersPage = React.lazy(
+	() => import("selected-customers/SelectedCustomersPage")
+); */
+//@ts-expect-error
 const Header = React.lazy(() => import("ui/Header"));
 
 function App() {
 	return (
-		<div className="App" style={{ border: "2px solid blue", padding: "1rem" }}>
-			<header className="App-header">
-				<h1>Aplicação Host</h1>
-				<p>
-					Abaixo, carregamos um componente de outro projeto (microfrontend).
-				</p>
-			</header>
+		<BrowserRouter>
+			<MainApp />
+		</BrowserRouter>
+	);
+}
 
-			<Suspense fallback={<div>Carregando componente do MFE 1...</div>}>
-				<Header />
+function MainApp() {
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	return (
+		<div className="App">
+			<Suspense fallback={<div>Carregando...</div>}>
+				<Header
+					userName="Usuário Mockado"
+					currentPath={location.pathname}
+					onCustomerClick={() => navigate("/customers")}
+					onSelectedCustomerClick={() => navigate("/selected-customers")}
+				/>
+				<Routes>
+					<Route path="/customers" element={<></>} />
+					<Route path="/selected-customer" element={<></>} />
+				</Routes>
 			</Suspense>
 		</div>
 	);

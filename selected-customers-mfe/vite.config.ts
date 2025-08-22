@@ -7,10 +7,10 @@ export default defineConfig({
 	plugins: [
 		babel({ plugins: ["babel-plugin-styled-components"] }),
 		federation({
-			name: "customers-mfe",
+			name: "selected-customers",
 			filename: "remoteEntry.js",
 			exposes: {
-				"./CustomersPage": "./src/App.jsx",
+				"./SelectedCustomersPage": "./src/App.tsx",
 			},
 			shared: ["react", "react-dom"],
 		}),

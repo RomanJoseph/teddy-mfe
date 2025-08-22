@@ -10,7 +10,7 @@ export default defineConfig({
 			name: "customers",
 			filename: "remoteEntry.js",
 			exposes: {
-				"./CustomersPage": "./src/App.jsx",
+				"./CustomersPage": "./src/App.tsx",
 			},
 			shared: ["react", "react-dom"],
 		}),

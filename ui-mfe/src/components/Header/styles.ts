@@ -36,6 +36,22 @@ export const HeaderContainer = styled.div`
 		gap: 33px;
 		font-size: 16px;
 		color: #000000;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			cursor: pointer;
+			padding-bottom: 5px;
+		}
+
+		.active {
+			color: #ff6c00;
+			border-bottom: 2px solid #ff6c00;
+		}
+
+		span {
+			cursor: pointer;
+		}
 	}
 
 	.header-right {
