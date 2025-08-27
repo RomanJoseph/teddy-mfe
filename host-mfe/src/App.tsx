@@ -14,6 +14,7 @@ const SelectedCustomersPage = React.lazy(
 ); */
 const Header = React.lazy(() => import("ui/Header"));
 const LoginPage = React.lazy(() => import("login/LoginPage"));
+const CustomersPage = React.lazy(() => import("customers/CustomersPage"));
 
 function App() {
 	return (
@@ -58,7 +59,7 @@ function MainApp() {
 					<LoginPage />
 				)}
 				<Routes>
-					<Route path="/customers" element={<></>} />
+					<Route path="/customers" element={<CustomersPage />} />
 					<Route path="/selected-customer" element={<></>} />
 				</Routes>
 			</Suspense>

@@ -1,0 +1,24 @@
+{
+  "name": "mfe-teddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:watch": "concurrently \"npm --prefix store-mfe run build -- --watch\" \"npm --prefix ui-mfe run build -- --watch\" \"npm --prefix login-mfe run build -- --watch\" \"npm --prefix customers-mfe run build -- --watch\" \"npm --prefix host-mfe run build -- --watch\" \"npm --prefix store-mfe run preview\" \"npm --prefix ui-mfe run preview\" \"npm --prefix login-mfe run preview\" \"npm --prefix customers-mfe run preview\" \"npm --prefix host-mfe run preview\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanJoseph/teddy-mfe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanJoseph/teddy-mfe/issues"
+  },
+  "homepage": "https://github.com/RomanJoseph/teddy-mfe#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

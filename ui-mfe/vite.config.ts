@@ -23,4 +23,7 @@ export default defineConfig({
 		cssCodeSplit: false,
 		assetsInlineLimit: 1024000,
 	},
+	preview: {
+		port: 5002,
+	}
 });

@@ -12,6 +12,7 @@ export default defineConfig({
 				ui: "http://localhost:5002/assets/remoteEntry.js",
 				login: "http://localhost:5003/assets/remoteEntry.js",
 				store: "http://localhost:5004/assets/remoteEntry.js",
+				customers: "http://localhost:5001/assets/remoteEntry.js",
 			},
 			shared: ["react", "react-dom"],
 		}),
@@ -21,5 +22,8 @@ export default defineConfig({
 		target: "esnext",
 		minify: false,
 		cssCodeSplit: false,
+	},
+	preview: {
+		port: 5000,
 	},
 });
