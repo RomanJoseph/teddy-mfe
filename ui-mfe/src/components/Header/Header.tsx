@@ -4,17 +4,14 @@ import teddyLogo from "../../assets/images/teddy-logo.png";
 
 interface Props {
 	userName: string;
-	currentPath: string;
-	onCustomerClick: () => void;
-	onSelectedCustomerClick: () => void;
+	options: {
+		label: string;
+		isSelected: boolean;
+		onClick: () => void;
+	}[];
 }
 
-function Header({
-	userName,
-	currentPath,
-	onCustomerClick,
-	onSelectedCustomerClick,
-}: Props) {
+function Header({ userName, options }: Props) {
 	return (
 		<HeaderContainer>
 			<div className="header-left">
@@ -22,19 +19,15 @@ function Header({
 				<img src={teddyLogo} className="teddy-logo" alt="TeddyLogo" />
 			</div>
 			<div className="header-center">
-				<span
-					className={currentPath === "/customers" ? "active" : ""}
-					onClick={onCustomerClick}
-				>
-					Clientes
-				</span>
-				<span
-					className={currentPath === "/selected-customers" ? "active" : ""}
-					onClick={onSelectedCustomerClick}
-				>
-					Clientes selecionados
-				</span>
-				<span>Sair</span>
+				{options.map((option) => (
+					<span
+						key={option.label}
+						className={option.isSelected ? "active" : ""}
+						onClick={option.onClick}
+					>
+						{option.label}
+					</span>
+				))}
 			</div>
 			<div className="header-right">
 				<span>

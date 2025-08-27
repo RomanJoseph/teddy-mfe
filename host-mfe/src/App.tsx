@@ -12,9 +12,7 @@ const CustomersPage = React.lazy(() => import("customers/CustomersPage"));
 const SelectedCustomersPage = React.lazy(
 	() => import("selected-customers/SelectedCustomersPage")
 ); */
-//@ts-expect-error
 const Header = React.lazy(() => import("ui/Header"));
-//@ts-expect-error
 const LoginPage = React.lazy(() => import("login/LoginPage"));
 
 function App() {
@@ -28,21 +26,34 @@ function App() {
 import { useUserStore } from "store/userStore";
 
 function MainApp() {
-	const { userName } = useUserStore();
+	const { userName, setUserName } = useUserStore();
 
 	const location = useLocation();
 	const navigate = useNavigate();
+
+	const headerOptions = [
+		{
+			label: "Clientes",
+			isSelected: location.pathname === "/customers",
+			onClick: () => navigate("/customers"),
+		},
+		{
+			label: "Clientes selecionados",
+			isSelected: location.pathname === "/selected-customers",
+			onClick: () => navigate("/selected-customers"),
+		},
+		{
+			label: "Sair",
+			isSelected: false,
+			onClick: () => setUserName(null),
+		},
+	];
 
 	return (
 		<div className="App">
 			<Suspense fallback={<div>Carregando...</div>}>
 				{userName ? (
-					<Header
-						userName={userName}
-						currentPath={location.pathname}
-						onCustomerClick={() => navigate("/customers")}
-						onSelectedCustomerClick={() => navigate("/selected-customers")}
-					/>
+					<Header userName={userName} options={headerOptions} />
 				) : (
 					<LoginPage />
 				)}
