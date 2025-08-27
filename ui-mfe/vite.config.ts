@@ -10,6 +10,8 @@ export default defineConfig({
 			filename: "remoteEntry.js",
 			exposes: {
 				"./Header": "./src/components/Header/Header.tsx",
+				"./Button": "./src/components/Button/Button.tsx",
+				"./Input": "./src/components/Input/Input.tsx",
 			},
 			shared: ["react", "react-dom"],
 		}),

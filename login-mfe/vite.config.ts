@@ -7,12 +7,16 @@ export default defineConfig({
 	plugins: [
 		react(),
 		federation({
-			name: "customers",
+			name: "login",
 			filename: "remoteEntry.js",
 			exposes: {
-				"./LoginPage": "./src/App.tsx",
+				"./LoginPage": "./src/page/LoginPage.tsx",
 			},
 			shared: ["react", "react-dom"],
+			remotes: {
+				store: "http://localhost:5004/assets/remoteEntry.js",
+				ui: "http://localhost:5002/assets/remoteEntry.js",
+			},
 		}),
 	],
 	build: {

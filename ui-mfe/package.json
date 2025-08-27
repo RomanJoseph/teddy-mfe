@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "up": "vite build && vite preview --port=5002"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",

@@ -1,5 +1,3 @@
-declare module 'customers/CustomersPage' {
-  import { ComponentType } from 'react';
-  const CustomersPage: ComponentType;
-  export default CustomersPage;
-}
+declare module "ui/Header";
+declare module "login/LoginPage";
+declare module "store/userStore";
