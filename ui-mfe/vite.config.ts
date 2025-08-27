@@ -12,6 +12,9 @@ export default defineConfig({
 				"./Header": "./src/components/Header/Header.tsx",
 				"./Button": "./src/components/Button/Button.tsx",
 				"./Input": "./src/components/Input/Input.tsx",
+				"./icons/plus": "./src/assets/images/icons/plus-icon.png",
+				"./icons/pencil": "./src/assets/images/icons/pencil-icon.png",
+				"./icons/trash": "./src/assets/images/icons/trash-icon.png",
 			},
 			shared: ["react", "react-dom"],
 		}),
@@ -25,5 +28,5 @@ export default defineConfig({
 	},
 	preview: {
 		port: 5002,
-	}
+	},
 });

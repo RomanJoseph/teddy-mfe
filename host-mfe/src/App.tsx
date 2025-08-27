@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import {
 	BrowserRouter,
 	Routes,
@@ -31,6 +31,15 @@ function MainApp() {
 
 	const location = useLocation();
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (userName && location.pathname === "/") {
+			navigate("/customers");
+		}
+		if (!userName && location.pathname !== "/") {
+			navigate("/");
+		}
+	}, [userName, location.pathname, navigate]);
 
 	const headerOptions = [
 		{

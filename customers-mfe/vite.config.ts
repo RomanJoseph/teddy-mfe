@@ -11,6 +11,9 @@ export default defineConfig({
 			exposes: {
 				"./CustomersPage": "./src/App.tsx",
 			},
+			remotes: {
+				ui: "http://localhost:5002/assets/remoteEntry.js",
+			},
 			shared: ["react", "react-dom"],
 		}),
 	],
@@ -19,6 +22,7 @@ export default defineConfig({
 		target: "esnext",
 		minify: false,
 		cssCodeSplit: false,
+		assetsInlineLimit: 1024000,
 	},
 	preview: {
 		port: 5001,

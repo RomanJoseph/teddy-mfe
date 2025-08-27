@@ -1,25 +1,24 @@
 import styled from "styled-components";
 
 export const CustomersPageContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 	gap: 20px;
-	width: 520px;
+	padding: 30px;
+	box-sizing: border-box;
 
-	p {
-		margin: unset;
-		color: #000000;
-		font-size: 36px;
-		font-weight: 400;
+	margin-top: 100px;
+
+	width: 90vw;
+
+	@media (max-width: 1024px) {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 30px 60px;
 	}
 
-	.login-input {
-		height: 60px;
-	}
-
-	.login-button {
-		height: 60px;
+	@media (max-width: 718px) {
+		grid-template-columns: 1fr;
+		padding: 20px 30px;
+		width: 70vw;
 	}
 `;
